@@ -5,6 +5,8 @@
       |
       <router-link to="/about">About</router-link>
       |
+      <router-link to="/book">Book's examples</router-link>
+      |
       <router-link to="/data-structures">Data structures</router-link>
     </div>
     <router-view/>
