@@ -13,10 +13,11 @@
         @Prop({default: ''})
         private title!: string;
 
-        private count: number = 0;
+        @Prop({default: 0})
+        private count!: number;
 
         private onClick(): void {
-            this.count++;
+            // this.count++;
             this.$emit('click');
         }
     }

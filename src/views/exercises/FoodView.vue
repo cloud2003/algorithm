@@ -1,13 +1,7 @@
 <template>
     <div class="container">
-        <h3>hello world</h3>
 
-        <router-link to="/food">8.4</router-link>
-        <router-link to="/chariot">8.7</router-link>
-
-<!--        <router-view></router-view>-->
-
-        <!--<div class="total">{{total}}</div>
+        <div class="total">{{total}}</div>
         <template v-for="item in food">
             <FoodComponent @click="onCLick(item.title)" :title="item.title" :count="item.count"></FoodComponent>
         </template>
@@ -18,8 +12,8 @@
         <ul>
             <li v-for="item in log">{{item}}</li>
         </ul>
-        <pre>{{ $data }}</pre>-->
 
+        <pre>{{ $data }}</pre>
     </div>
 </template>
 
@@ -28,19 +22,14 @@
     import {Component, Vue} from 'vue-property-decorator';
     import FoodComponent from '@/components/FoodComponent.vue';
 
-    interface Food {
-        title: string;
-        count: number;
-    }
-
     @Component({
         components: {FoodComponent},
     })
-    export default class BookExample extends Vue {
+    export default class FoodView extends Vue {
 
-        /*private log: string[] = [];
+        private log: string[] = [];
 
-        private food: Food[] = [{
+        private food: Array<{title: string, count: number}> = [{
             title: 'Chicken',
             count: 1,
         }, {
@@ -58,18 +47,25 @@
         }
 
         private onCLick(title: string): void {
+            // this.total++;
             this.food.filter((i) => i.title === title).map((i) => i.count++);
             this.log.push(title + ' got a point');
+            // this.food.filter((f) => f.title === title).map((f) => f.count = e);
         }
 
         private reset(): void {
+            // this.total = 0;
             this.food.map((i) => i.count = 0);
             this.log = [];
-        }*/
+        }
     }
 </script>
 
 
 <style lang="less" scoped>
+    .total {
+        font-weight: bold;
+        font-size: 1em;
+    }
 
 </style>
