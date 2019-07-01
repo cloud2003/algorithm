@@ -1,75 +1,37 @@
 <template>
     <div class="container">
-        <h3>hello world</h3>
+        <div class="list">
+            <span class="list_item">
+                <router-link to="/food">8.4</router-link>
+            </span>
+            <span class="list_item">
+                <router-link to="/chariot">8.7</router-link>
+            </span>
+        </div>
 
-        <router-link to="/food">8.4</router-link>
-        <router-link to="/chariot">8.7</router-link>
-
-<!--        <router-view></router-view>-->
-
-        <!--<div class="total">{{total}}</div>
-        <template v-for="item in food">
-            <FoodComponent @click="onCLick(item.title)" :title="item.title" :count="item.count"></FoodComponent>
-        </template>
-
-        <button @click="reset">Reset</button>
-
-        <hr/>
-        <ul>
-            <li v-for="item in log">{{item}}</li>
-        </ul>
-        <pre>{{ $data }}</pre>-->
-
+        <div class="content">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
-    import FoodComponent from '@/components/FoodComponent.vue';
 
-    interface Food {
-        title: string;
-        count: number;
-    }
-
-    @Component({
-        components: {FoodComponent},
-    })
+    @Component
     export default class BookExample extends Vue {
 
-        /*private log: string[] = [];
-
-        private food: Food[] = [{
-            title: 'Chicken',
-            count: 1,
-        }, {
-            title: 'Beef',
-            count: 0,
-        }, {
-            title: 'Pork',
-            count: 10,
-        }];
-
-        private get total(): number {
-            return this.food.reduce((a, b) => {
-                return a + b.count;
-            }, 0);
-        }
-
-        private onCLick(title: string): void {
-            this.food.filter((i) => i.title === title).map((i) => i.count++);
-            this.log.push(title + ' got a point');
-        }
-
-        private reset(): void {
-            this.food.map((i) => i.count = 0);
-            this.log = [];
-        }*/
     }
 </script>
 
 
 <style lang="less" scoped>
+    .list {
+        margin-bottom: 20px;
 
+        &_item {
+            margin: 0 10px;
+        }
+    }
 </style>

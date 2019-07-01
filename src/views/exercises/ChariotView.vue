@@ -1,5 +1,7 @@
 <template>
-    
+    <div>
+        кони
+    </div>
 </template>
 
 
@@ -9,11 +11,13 @@
     @Component
     export default class ChariotView extends Vue {
 
+        private mounted(): void {
+            // console.log('mounted');
+        }
     }
 </script>
 
 
 <style lang="less" scoped>
-
 
 </style>

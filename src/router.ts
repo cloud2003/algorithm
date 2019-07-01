@@ -33,13 +33,13 @@ export default new Router({
                 {
                     // при совпадении пути с шаблоном /user/:id/profile
                     // в <router-view> компонента User будет показан UserProfile
-                    path: 'food',
+                    path: '/food',
                     component: FoodView,
                 },
                 {
                     // при совпадении пути с шаблоном /user/:id/posts
                     // в <router-view> компонента User будет показан UserPosts
-                    path: 'chariot',
+                    path: '/chariot',
                     component: ChariotView,
                 },
             ],

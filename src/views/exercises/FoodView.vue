@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-
         <div class="total">{{total}}</div>
         <template v-for="item in food">
             <FoodComponent @click="onCLick(item.title)" :title="item.title" :count="item.count"></FoodComponent>
