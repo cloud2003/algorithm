@@ -69,13 +69,15 @@ export class LinkedList<V> {
     }
 
     // DeleteAtHead — удаляет первый элемент списка
-    public deleteAtHead() {
+    public deleteAtHead(): NodeEl<V> | null {
         let current: NodeEl<V> | null = this.header;
         if (current) {
             this.header = current.next;
             current = null;
             this.length--;
+            return this.header;
         }
+        return current;
     }
 
     // Delete — удаляет заданный элемент из списка
@@ -136,7 +138,7 @@ for (let i = 1; i <= 5; i++) {
 // linkedList.addAtHead(888);
 // linkedList.addAtHead(777);
 // linkedList.deleteAtHead();
-// const xxx = linkedList.getValue(5);
+// const xxx = linkedList.printList();
 // console.log(xxx);
 
 // console.log(linkedList.printList());
