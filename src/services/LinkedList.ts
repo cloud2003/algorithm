@@ -107,6 +107,19 @@ export class LinkedList<V> {
         }
     }
 
+    public reverse(curr: NodeEl<V> | null = this.header, prev: NodeEl<V> | null = null): NodeEl<V> | null {
+        if (!curr) {
+            this.header = prev;
+            return this.header;
+        } else {
+            const next: NodeEl<V> | null = curr.next;
+            curr.next = prev;
+            // prev = curr;
+            // curr = next;
+            return this.reverse(next, curr);
+        }
+    }
+
     // Search — возвращает заданный элемент из списка
     // searchNode(pos: number): NodeEl<V> | null {
     //     let current: NodeEl<V> | null = this.header;
