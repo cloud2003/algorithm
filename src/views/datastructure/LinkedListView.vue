@@ -2,7 +2,16 @@
     <div class="ll-body">
         <input type="text" v-model="sizeList" @input="createdLinkedList($event.target.value)"/>
 
-        <div>Result: <button @click="resultPrint">PRINT</button> {{resultList}}</div>
+        <div>
+            <button @click="resultPrint">PRINT RESULT</button>
+            {{resultList}}
+        </div>
+        <div>
+            <button @click="deleteHeader">DELETE FIRST NODE</button>
+        </div>
+        <div>
+            <button @click="reverse">REVERSE</button>
+        </div>
         <pre>
             {{list}}
         </pre>
@@ -39,6 +48,15 @@
                 ll.addAtEnd(i);
             }
             this.list = ll;
+        }
+
+        private deleteHeader(): void {
+            this.list.deleteAtHead();
+            this.sizeList--;
+        }
+
+        private reverse(): void {
+            // this.list.reverse();
         }
     }
 </script>
