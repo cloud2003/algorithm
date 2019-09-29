@@ -2,7 +2,9 @@
     <ul>
         <li>Связный список (Linked List)
             <ul>
-                <li><u>Односвязный список</u></li>
+                <li><u>Односвязный список</u>
+                    <LinkedListView size="3"></LinkedListView>
+                </li>
                 <li>Двусвязный список</li>
                 <li>Кольцевой список</li>
             </ul>
@@ -23,6 +25,7 @@
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
     import {Stack} from '../services/stack';
+    import LinkedListView from '@/views/datastructure/LinkedListView.vue';
 
     interface Brace {
         type: string;
@@ -30,7 +33,9 @@
         right: string;
     }
 
-    @Component({})
+    @Component({
+        components: {LinkedListView},
+    })
     export default class DataStructures extends Vue {
 
         private arrayOfBraces: string = '';

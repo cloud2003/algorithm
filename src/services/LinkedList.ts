@@ -90,14 +90,18 @@ export class LinkedList<V> {
         return this.length;
     }
 
-    public printList(val: NodeEl<V> | null = this.header): void {
+    public printList(val: NodeEl<V> | null = this.header, str: string = ''): string {
+        // console.log('PRINT LL');
         const current: NodeEl<V> | null = val;
 
         if (!current) {
-            return;
+            return str;
         } else {
-            current.print();
-            this.printList(current.next);
+            str += current.print();
+            if (current.next) {
+                str += ' -> ';
+            }
+            return this.printList(current.next, str);
         }
     }
 
@@ -135,5 +139,5 @@ for (let i = 1; i <= 5; i++) {
 // const xxx = linkedList.getValue(5);
 // console.log(xxx);
 
-// linkedList.printList();
+// console.log(linkedList.printList());
 // linkedList.searchNode(2);

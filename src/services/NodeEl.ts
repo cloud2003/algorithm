@@ -21,7 +21,8 @@ export class NodeEl<V> {
         return this;
     }
 
-    public print(): void {
+    public print(): V {
+        return this.data;
         // console.log(this.data);
     }
 }
